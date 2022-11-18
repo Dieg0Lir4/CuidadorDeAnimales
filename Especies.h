@@ -15,12 +15,12 @@ class Mamifero{
         string nombre;
 
     public:
-        Mamifero(int, bool, string, char, int, float, int);
+        Mamifero(int, bool, string, char, int, float, int, string);
         void liberarAnimal();
         void alimentarAnimal(float);
         void llevarloAlMedico();
         void comprarAmigo(string);
-        void emparejarAnimal(string):
+        void emparejarAnimal(string);
         void forzarApariamiento();
         float mostrarPeso();
 
@@ -58,12 +58,12 @@ class Reptil{
         string nombre;
 
     public:
-        Reptil(int, bool, string, char, int, float, int);
+        Reptil(int, bool, string, char, int, float, int, string);
         void liberarAnimal();
         void alimentarAnimal(float);
         void llevarloAlMedico();
         void comprarAmigo(string);
-        void emparejarAnimal(string):
+        void emparejarAnimal(string);
         void forzarApariamiento();
 };
 
@@ -79,7 +79,7 @@ Reptil::Reptil(int _edad, bool _pareja, string _nombre_pareja, char _sexo, int _
 }
 
 void Reptil::llevarloAlMedico(){
-    cout<<nombre<<" tiene "<<escamas<<" Sexo: "<<sexo<<" Edad: "<<edad<<" anios"<<endl;
+    cout<<nombre<<" tiene "<<escamas<< " escamas"" Sexo: "<<sexo<<" Edad: "<<edad<<" anios"<<endl;
 }
 
 class Ave{
@@ -91,16 +91,16 @@ class Ave{
         int crias;
         float peso;
         int plumas;
-        string nombre;
 
     public:
-        Ave(int, bool, string, char, int, float, int);
+        string nombre;
+        Ave(int, bool, string, char, int, float, int, string);
         void liberarAnimal();
         void alimentarAnimal(float);
         void llevarloAlMedico();
         void comprarAmigo(string);
-        void emparejarAnimal(string):
-        void apariar();
+        void emparejarAnimal(string);
+        void forzarApariamiento();
 
 };
 
@@ -116,6 +116,8 @@ Ave::Ave(int _edad, bool _pareja, string _nombre_pareja, char _sexo, int _crias,
 }
 
 void Ave::emparejarAnimal(string nombre){
-    pareja = nombre;
-    cout<<"Pareja nueva: "<<pareja<<endl;
+    pareja = true;
+    nombre_pareja = nombre;
+    cout<<"Pareja nueva: "<<nombre_pareja<<endl;
+
 }
