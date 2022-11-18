@@ -6,99 +6,116 @@ using namespace std;
 class Mamifero{
     private:
         int edad;
-        string animal;
+        bool pareja;
+        string nombre_pareja;
+        char sexo;
+        int crias;
+        float peso;
+        int pelos;
         string nombre;
-        bool vacunado;
-        
 
     public:
-        Mamifero(int, string, string);
-        void vacunar();
-        bool mostrarVacunacion();
+        Mamifero(int, bool, string, char, int, float, int);
+        void liberarAnimal();
+        void alimentarAnimal(float);
+        void llevarloAlMedico();
+        void comprarAmigo(string);
+        void emparejarAnimal(string):
+        void forzarApariamiento();
+        float mostrarPeso();
+
+       
 };
 
-Mamifero::Mamifero(int _edad, string _animal, string _nombre){
+Mamifero::Mamifero(int _edad, bool _pareja, string _nombre_pareja, char _sexo, int _crias, float _peso, int _pelos, string _nombre){
     edad = _edad;
-    animal = _animal;
+    pareja = _pareja;
+    nombre_pareja = _nombre_pareja;
+    sexo = _sexo;
+    crias = _crias;
+    peso = _peso;
+    pelos = _pelos;
     nombre = _nombre;
 }
 
-bool Mamifero::mostrarVacunacion(){
-    
-    bool respuesta = false;
+void Mamifero::alimentarAnimal(float comida_kg){
+    peso += comida_kg*0.2;    
 
-    if(vacunado == true){
-        respuesta = true;
-    }
-    return respuesta;
 }
 
-void Mamifero::vacunar(){
-    vacunado = true;
+float Mamifero::mostrarPeso(){
+    return peso;
 }
-
-
 class Reptil{
     private:
         int edad;
-        string animal;
-        string sexo;
+        bool pareja;
+        string nombre_pareja;
+        char sexo;
+        int crias;
         float peso;
-        
+        int escamas;
+        string nombre;
 
     public:
-        Reptil(int, string, string);
-        void alimentar(float);
-        float mostrarPeso();
+        Reptil(int, bool, string, char, int, float, int);
+        void liberarAnimal();
+        void alimentarAnimal(float);
+        void llevarloAlMedico();
+        void comprarAmigo(string);
+        void emparejarAnimal(string):
+        void forzarApariamiento();
 };
 
-Reptil::Reptil(int _edad, string _animal, string _sexo){
+Reptil::Reptil(int _edad, bool _pareja, string _nombre_pareja, char _sexo, int _crias, float _peso, int _escamas, string _nombre){
     edad = _edad;
-    animal = _animal;
+    pareja = _pareja;
+    nombre_pareja = _nombre_pareja;
     sexo = _sexo;
+    crias = _crias;
+    peso = _peso;
+    escamas = _escamas;
+    nombre = _nombre;
 }
 
-float Reptil::mostrarPeso(){
-    
-    return peso;
-   
+void Reptil::llevarloAlMedico(){
+    cout<<nombre<<" tiene "<<escamas<<" Sexo: "<<sexo<<" Edad: "<<edad<<" anios"<<endl;
 }
-
-void Reptil::alimentar(float comida){
-    peso += comida;
-}
-
 
 class Ave{
     private:
         int edad;
-        string animal;
+        bool pareja;
+        string nombre_pareja;
+        char sexo;
+        int crias;
+        float peso;
+        int plumas;
         string nombre;
-        bool limpio;
-        
 
     public:
-        Ave(int, string, string);
-        void baniar();
-        bool mostrarLimpieza();
+        Ave(int, bool, string, char, int, float, int);
+        void liberarAnimal();
+        void alimentarAnimal(float);
+        void llevarloAlMedico();
+        void comprarAmigo(string);
+        void emparejarAnimal(string):
+        void apariar();
+
 };
 
-Ave::Ave(int _edad, string _animal, string _nombre){
+Ave::Ave(int _edad, bool _pareja, string _nombre_pareja, char _sexo, int _crias, float _peso, int _plumas, string _nombre){
     edad = _edad;
-    animal = _animal;
+    pareja = _pareja;
+    nombre_pareja = _nombre_pareja;
+    sexo = _sexo;
+    crias = _crias;
+    peso = _peso;
+    plumas = _plumas;
     nombre = _nombre;
 }
 
-bool Ave::mostrarLimpieza(){
-    
-    bool respuesta = false;
-
-    if(limpio == true){
-        respuesta = true;
-    }
-    return respuesta;
-}
-
-void Ave::baniar(){
-    limpio = true;
+void Ave::emparejarAnimal(string nombre){
+    pareja = nombre;
+    cout<<"Pareja nueva: "<<pareja<<endl;
 }

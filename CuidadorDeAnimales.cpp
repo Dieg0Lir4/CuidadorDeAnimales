@@ -5,48 +5,17 @@ using namespace std;
 #include "Especies.h"
 
 int main(){
+//int _edad, bool _pareja, string _nombre_pareja, char _sexo, int _crias, float _peso, int _plumas, string _nombre
+    Mamifero leon(20, false,"M",1,120.5,234354353, "Alex");
+    Reptil cocodrilo(70, false, ,"M",4,136.5,23453, "Coco");
+    Ave buho(12, true,"H",0,30.7,784353, "Yuvi");
 
-    Mamifero leon(20, "Leon", "Alex");
-    Reptil iguana = Reptil(10, "Hembra", "Iguana");
-    Ave buho(30, "buho", "Claw");
-
-    if(leon.mostrarVacunacion()){
-        cout<<"El leon esta vacunado"<<endl;
-    }
-    else{
-        cout<<"El leon NO esta vacunado"<<endl;
-    }
-
-    cout<<"La iguana pesa "<<iguana.mostrarPeso()<<"kg"<<endl;
     
-    if(buho.mostrarLimpieza()){
-         cout<<"El buho esta limpio"<<endl;
-    }
-    else{
-        cout<<"El buho NO esta limpio"<<endl;
-    }
-    
+    cout<<"Peso del leon: "<<leon.mostrarPeso()<<endl;
+    leon.alimentarAnimal(39.4);
+    cout<<"Peso del leon: "<<leon.mostrarPeso()<<endl;
 
-    leon.vacunar();
-    iguana.alimentar(40.4);
-    buho.baniar();
-
-     if(leon.mostrarVacunacion()){
-        cout<<"El leon esta vacunado"<<endl;
-    }
-    else{
-        cout<<"El leon NO esta vacunado"<<endl;
-    }
-
-    cout<<"La iguana pesa "<<iguana.mostrarPeso()<<"kg"<<endl;
-    
-    if(buho.mostrarLimpieza()){
-         cout<<"El buho esta limpio"<<endl;
-    }
-    else{
-        cout<<"El buho NO esta limpio"<<endl;
-    }
-
+  
 
     return 0;
 }
