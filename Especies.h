@@ -1,123 +1,169 @@
 #include<iostream>
-using namespace std;
 #include<string>
+using namespace std;
+#include "Move.h"
 
 
-class Mamifero{
+class Pokemon{
+
     private:
-        int edad;
-        bool pareja;
-        string nombre_pareja;
-        char sexo;
-        int crias;
-        float peso;
-        int pelos;
-        string nombre;
-
-    public:
-        Mamifero(int, bool, string, char, int, float, int, string);
-        void liberarAnimal();
-        void alimentarAnimal(float);
-        void llevarloAlMedico();
-        void comprarAmigo(string);
-        void emparejarAnimal(string);
-        void forzarApariamiento();
-        float mostrarPeso();
-
+        string name;
+        string type;
+        string second_type;
+        Move move[4];
+        string ability;
+        bool shiny;
+        Stadistics stats;
+        int level;
        
-};
-
-Mamifero::Mamifero(int _edad, bool _pareja, string _nombre_pareja, char _sexo, int _crias, float _peso, int _pelos, string _nombre){
-    edad = _edad;
-    pareja = _pareja;
-    nombre_pareja = _nombre_pareja;
-    sexo = _sexo;
-    crias = _crias;
-    peso = _peso;
-    pelos = _pelos;
-    nombre = _nombre;
-}
-
-void Mamifero::alimentarAnimal(float comida_kg){
-    peso += comida_kg*0.2;    
-
-}
-
-float Mamifero::mostrarPeso(){
-    return peso;
-}
-class Reptil{
-    private:
-        int edad;
-        bool pareja;
-        string nombre_pareja;
-        char sexo;
-        int crias;
-        float peso;
-        int escamas;
-        string nombre;
-
     public:
-        Reptil(int, bool, string, char, int, float, int, string);
-        void liberarAnimal();
-        void alimentarAnimal(float);
-        void llevarloAlMedico();
-        void comprarAmigo(string);
-        void emparejarAnimal(string);
-        void forzarApariamiento();
+        Pokemon(){
+            name = "None";
+            type = "None";
+            second_type = "None";
+            ability = "None";
+            shiny = false;
+            level = 50;
+            stats = Stadistics(50, 50, 50, 50, 50, 50);
+        }
+
+        Pokemon(string new_name, string new_type, string new_second_type, string new_ability, bool new_shiny, int new_level, Stadistics new_stats){
+            name = new_name;
+            type = new_type;
+            second_type = new_second_type;
+            ability = new_ability;
+            shiny = new_shiny;
+            level = new_level;
+            stats = new_stats;
+        }
+
+        string getName(){
+            return name;
+        }
+
+        string getType(){
+            return type;
+        }
+
+        string getSecondType(){
+            return second_type;
+        }
+
+        string getAbility(){
+            return ability;
+        }
+
+        bool getShiny(){
+            return shiny;
+        }
+
+        int getLevel(){
+            return level;
+        }
+
+        void setName(string new_name){
+            name = new_name;
+        }
+
+        void setType(string new_type){
+            type = new_type;
+        }
+
+        void setSecondType(string new_second_type){
+            second_type = new_second_type;
+        }
+
+        void setAbility(string new_ability){
+            ability = new_ability;
+        }
+
+        void setShiny(bool new_shiny){
+            shiny = new_shiny;
+        }
+
+        void setLevel(int new_level){
+            level = new_level;
+        }
+
+        void setMove(int index, string new_name, string new_type, int new_power){
+            move[index].setMoveName(new_name);
+            move[index].setMoveType(new_type);
+            move[index].setBasePower(new_power);
+        }
+
+        void setStats(int new_hp, int new_attack, int new_defense, int new_special_attack, int new_special_defense, int new_speed){
+            stats.setHp(new_hp);
+            stats.setAttack(new_attack);
+            stats.setDefense(new_defense);
+            stats.setSpecialAttack(new_special_attack);
+            stats.setSpecialDefense(new_special_defense);
+            stats.setSpeed(new_speed);
+        }
+
+        void printPokemon(){
+            cout << endl;
+            cout << "Name: " << name << endl;
+            cout << "Type: " << type << endl;
+            cout << "Second Type: " << second_type << endl;
+            cout << "Ability: " << ability << endl;
+            cout << "Shiny: " << shiny << endl;
+            cout << "Level: " << level << endl;
+            cout << "Stats: " << endl;
+            cout << "HP: " << stats.getHp() << endl;
+            cout << "Attack: " << stats.getAttack() << endl;
+            cout << "Defense: " << stats.getDefense() << endl;
+            cout << "Special Attack: " << stats.getSpecialAttack() << endl;
+            cout << "Special Defense: " << stats.getSpecialDefense() << endl;
+            cout << "Speed: " << stats.getSpeed() << endl;
+            cout << "Moves: " << endl;
+            for(int i = 0; i < 4; i++){
+                cout << "Move " << i + 1 << ": " << move[i].getMoveName() << endl;
+                cout << "Type: " << move[i].getMoveType() << endl;
+                cout << "Base Power: " << move[i].getBasePower() << endl;
+            }
+        }
+
+        
+            
 };
 
-Reptil::Reptil(int _edad, bool _pareja, string _nombre_pareja, char _sexo, int _crias, float _peso, int _escamas, string _nombre){
-    edad = _edad;
-    pareja = _pareja;
-    nombre_pareja = _nombre_pareja;
-    sexo = _sexo;
-    crias = _crias;
-    peso = _peso;
-    escamas = _escamas;
-    nombre = _nombre;
-}
+class Captured : public Pokemon{
 
-void Reptil::llevarloAlMedico(){
-    cout<<nombre<<" tiene "<<escamas<< " escamas"" Sexo: "<<sexo<<" Edad: "<<edad<<" anios"<<endl;
-}
-
-class Ave{
     private:
-        int edad;
-        bool pareja;
-        string nombre_pareja;
-        char sexo;
-        int crias;
-        float peso;
-        int plumas;
-
+        string mote;
+        int happiness;
+    
     public:
-        string nombre;
-        Ave(int, bool, string, char, int, float, int, string);
-        void liberarAnimal();
-        void alimentarAnimal(float);
-        void llevarloAlMedico();
-        void comprarAmigo(string);
-        void emparejarAnimal(string);
-        void forzarApariamiento();
+        Captured(){
+            mote = "Bulbasaur";
+            happiness = 0;
+        }
+
+        Captured(string new_name, string new_type, string new_second_type, string new_ability, bool new_shiny, int new_level, Stadistics new_stats, string new_mote, int new_happiness){
+            mote = new_mote;
+            happiness = new_happiness;
+        }
+
+        string getMote(){
+            return mote;
+        }
+
+        int getHappiness(){
+            return happiness;
+        }
+
+        void setMote(string new_mote){
+            mote = new_mote;
+        }
+
+        void setHappiness(int new_happiness){
+            happiness = new_happiness;
+        }
+
+        void printCaputared(){
+            cout << "Mote: " << mote << endl;
+            cout << "Happiness: " << happiness << endl;
+        }  
+        
 
 };
-
-Ave::Ave(int _edad, bool _pareja, string _nombre_pareja, char _sexo, int _crias, float _peso, int _plumas, string _nombre){
-    edad = _edad;
-    pareja = _pareja;
-    nombre_pareja = _nombre_pareja;
-    sexo = _sexo;
-    crias = _crias;
-    peso = _peso;
-    plumas = _plumas;
-    nombre = _nombre;
-}
-
-void Ave::emparejarAnimal(string nombre){
-    pareja = true;
-    nombre_pareja = nombre;
-    cout<<"Pareja nueva: "<<nombre_pareja<<endl;
-
-}
