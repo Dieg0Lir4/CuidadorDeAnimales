@@ -1,7 +1,6 @@
 #include<iostream>
 #include<string>
 using namespace std;
-#include "Move.h"
 
 
 class Pokemon{
@@ -10,13 +9,14 @@ class Pokemon{
         string name;
         string type;
         string second_type;
-        Move move[4];
         string ability;
         bool shiny;
         Stadistics stats;
         int level;
+        bool caught;
        
     public:
+        // Constructores
         Pokemon(){
             name = "None";
             type = "None";
@@ -27,7 +27,7 @@ class Pokemon{
             stats = Stadistics(50, 50, 50, 50, 50, 50);
         }
 
-        Pokemon(string new_name, string new_type, string new_second_type, string new_ability, bool new_shiny, int new_level, Stadistics new_stats){
+        Pokemon(string new_name, string new_type, string new_second_type, string new_ability, bool new_shiny, int new_level, Stadistics new_stats, bool new_caught){
             name = new_name;
             type = new_type;
             second_type = new_second_type;
@@ -35,8 +35,10 @@ class Pokemon{
             shiny = new_shiny;
             level = new_level;
             stats = new_stats;
+            caught = new_caught;
         }
 
+        // Getters
         string getName(){
             return name;
         }
@@ -61,6 +63,11 @@ class Pokemon{
             return level;
         }
 
+        bool getCaught(){
+            return caught;
+        }
+
+        // Setters
         void setName(string new_name){
             name = new_name;
         }
@@ -85,13 +92,10 @@ class Pokemon{
             level = new_level;
         }
 
-        void setMove(int index, string new_name, string new_type, int new_power){
-            move[index].setMoveName(new_name);
-            move[index].setMoveType(new_type);
-            move[index].setBasePower(new_power);
-        }
+        
 
-        void setStats(int new_hp, int new_attack, int new_defense, int new_special_attack, int new_special_defense, int new_speed){
+        void setStats(int new_hp, int new_attack, int new_defense,
+        int new_special_attack, int new_special_defense, int new_speed){
             stats.setHp(new_hp);
             stats.setAttack(new_attack);
             stats.setDefense(new_defense);
@@ -100,6 +104,7 @@ class Pokemon{
             stats.setSpeed(new_speed);
         }
 
+        //Funciones
         void printPokemon(){
             cout << endl;
             cout << "Name: " << name << endl;
@@ -115,18 +120,14 @@ class Pokemon{
             cout << "Special Attack: " << stats.getSpecialAttack() << endl;
             cout << "Special Defense: " << stats.getSpecialDefense() << endl;
             cout << "Speed: " << stats.getSpeed() << endl;
-            cout << "Moves: " << endl;
-            for(int i = 0; i < 4; i++){
-                cout << "Move " << i + 1 << ": " << move[i].getMoveName() << endl;
-                cout << "Type: " << move[i].getMoveType() << endl;
-                cout << "Base Power: " << move[i].getBasePower() << endl;
-            }
+            
         }
 
         
             
 };
 
+//Clase hija de la clase Pokemon
 class Captured : public Pokemon{
 
     private:
@@ -139,11 +140,12 @@ class Captured : public Pokemon{
             happiness = 0;
         }
 
-        Captured(string new_name, string new_type, string new_second_type, string new_ability, bool new_shiny, int new_level, Stadistics new_stats, string new_mote, int new_happiness){
-            mote = new_mote;
+        Captured(string new_name, string new_type, string new_second_type, string new_ability, bool new_shiny, int new_level, Stadistics new_stats, bool new_caught, string new_mote, int new_happiness){
+            mote = new_mote; 
             happiness = new_happiness;
         }
 
+        //Getters
         string getMote(){
             return mote;
         }
@@ -151,7 +153,8 @@ class Captured : public Pokemon{
         int getHappiness(){
             return happiness;
         }
-
+        
+        //Setters
         void setMote(string new_mote){
             mote = new_mote;
         }
@@ -160,10 +163,16 @@ class Captured : public Pokemon{
             happiness = new_happiness;
         }
 
+        //Funciones
         void printCaputared(){
+            printPokemon();
             cout << "Mote: " << mote << endl;
             cout << "Happiness: " << happiness << endl;
-        }  
+        }
+
+        
+            
+        
         
 
 };

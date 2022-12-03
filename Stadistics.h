@@ -4,7 +4,9 @@ using namespace std;
 
 class Stadistics{
 
+    //Encapsulamiento para que no se pueda acceder a los atributos desde fuera de la clase
     private:
+    // Atributos
         int hp;
         int attack;
         int defense;
@@ -13,6 +15,8 @@ class Stadistics{
         int speed;
 
     public:
+    // Metodos
+        // Constructores
         Stadistics(){
             hp = 0;
             attack = 0;
@@ -22,7 +26,8 @@ class Stadistics{
             speed = 0;
         }
 
-        Stadistics(int new_hp, int new_attack, int new_defense, int new_special_attack, int new_special_defense, int new_speed){
+        Stadistics(int new_hp, int new_attack, int new_defense,
+        int new_special_attack, int new_special_defense, int new_speed){
             hp = new_hp;
             attack = new_attack;
             defense = new_defense;
@@ -31,6 +36,7 @@ class Stadistics{
             speed = new_speed;
         }
 
+        // Getters
         int getHp(){
             return hp;
         }
@@ -55,6 +61,7 @@ class Stadistics{
             return speed;
         }
 
+        // Setters
         void setHp(int new_hp){
             hp = new_hp;
         }

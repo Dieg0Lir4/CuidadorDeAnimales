@@ -5,6 +5,7 @@ using namespace std;
 
 class Party{
 
+    //Encapsulamiento privado
     private:
         int number_of_pokemon_weak_to_fire;
         int number_of_pokemon_weak_to_water;
@@ -23,10 +24,12 @@ class Party{
         int number_of_pokemon_weak_to_dark;
         int number_of_pokemon_weak_to_steel;
         int number_of_pokemon_weak_to_fairy;
+        int number_of_pokemon_weak_to_normal;
         Pokemon pokemons[6];
 
-        
+    //Encapsulamiento publico
     public:
+        //Funciones
         void checkWeakness(){
             number_of_pokemon_weak_to_fire = 0;
             number_of_pokemon_weak_to_water = 0;
@@ -45,6 +48,7 @@ class Party{
             number_of_pokemon_weak_to_dark = 0;
             number_of_pokemon_weak_to_steel = 0;
             number_of_pokemon_weak_to_fairy = 0;
+            number_of_pokemon_weak_to_normal = 0;
             for(int i = 0; i < 6; i++){
                 cout << pokemons[i].getName() << " is weak to: " << endl;
                 if(pokemons[i].getType() == "Grass"){
@@ -195,35 +199,58 @@ class Party{
                     cout << endl;
                     number_of_pokemon_weak_to_poison++;
                     number_of_pokemon_weak_to_steel++;
-                }
-                else{
+                }else if(pokemons[i].getType() == "Normal"){
+                    cout << "Fighting" << endl;
+                    cout << endl;
+                    number_of_pokemon_weak_to_fighting++;
+                }else{
                     cout << "Type: " << pokemons[i].getType() << " does not exist."<< endl;
                     cout << endl;
                 }
+
             }
-            cout << "Number of Pokemon weak to Fire: " << number_of_pokemon_weak_to_fire << endl;
-            cout << "Number of Pokemon weak to Water: " << number_of_pokemon_weak_to_water << endl;
-            cout << "Number of Pokemon weak to Electric: " << number_of_pokemon_weak_to_electric << endl;
-            cout << "Number of Pokemon weak to Grass: " << number_of_pokemon_weak_to_grass << endl;
-            cout << "Number of Pokemon weak to Ice: " << number_of_pokemon_weak_to_ice << endl;
-            cout << "Number of Pokemon weak to Fighting: " << number_of_pokemon_weak_to_fighting << endl;
-            cout << "Number of Pokemon weak to Poison: " << number_of_pokemon_weak_to_poison << endl;
-            cout << "Number of Pokemon weak to Ground: " << number_of_pokemon_weak_to_ground << endl;
-            cout << "Number of Pokemon weak to Flying: " << number_of_pokemon_weak_to_flying << endl;
-            cout << "Number of Pokemon weak to Psychic: " << number_of_pokemon_weak_to_psychic << endl;
-            cout << "Number of Pokemon weak to Bug: " << number_of_pokemon_weak_to_bug << endl;
-            cout << "Number of Pokemon weak to Rock: " << number_of_pokemon_weak_to_rock << endl;
-            cout << "Number of Pokemon weak to Ghost: " << number_of_pokemon_weak_to_ghost << endl;
-            cout << "Number of Pokemon weak to Dragon: " << number_of_pokemon_weak_to_dragon << endl;
-            cout << "Number of Pokemon weak to Dark: " << number_of_pokemon_weak_to_dark << endl;
-            cout << "Number of Pokemon weak to Steel: " << number_of_pokemon_weak_to_steel << endl;
-            cout << "Number of Pokemon weak to Fairy: " << number_of_pokemon_weak_to_fairy << endl;
+            cout << "Number of Pokemon weak to Fire: " <<
+            number_of_pokemon_weak_to_fire << endl;
+            cout << "Number of Pokemon weak to Water: " <<
+            number_of_pokemon_weak_to_water << endl;
+            cout << "Number of Pokemon weak to Electric: " << 
+            number_of_pokemon_weak_to_electric << endl;
+            cout << "Number of Pokemon weak to Grass: " << 
+            number_of_pokemon_weak_to_grass << endl;
+            cout << "Number of Pokemon weak to Ice: " << 
+            number_of_pokemon_weak_to_ice << endl;
+            cout << "Number of Pokemon weak to Fighting: " << 
+            number_of_pokemon_weak_to_fighting << endl;
+            cout << "Number of Pokemon weak to Poison: " << 
+            number_of_pokemon_weak_to_poison << endl;
+            cout << "Number of Pokemon weak to Ground: " << 
+            number_of_pokemon_weak_to_ground << endl;
+            cout << "Number of Pokemon weak to Flying: " << 
+            number_of_pokemon_weak_to_flying << endl;
+            cout << "Number of Pokemon weak to Psychic: " << 
+            number_of_pokemon_weak_to_psychic << endl;
+            cout << "Number of Pokemon weak to Bug: " << 
+            number_of_pokemon_weak_to_bug << endl;
+            cout << "Number of Pokemon weak to Rock: " << 
+            number_of_pokemon_weak_to_rock << endl;
+            cout << "Number of Pokemon weak to Ghost: " << 
+            number_of_pokemon_weak_to_ghost << endl;
+            cout << "Number of Pokemon weak to Dragon: " << 
+            number_of_pokemon_weak_to_dragon << endl;
+            cout << "Number of Pokemon weak to Dark: " << 
+            number_of_pokemon_weak_to_dark << endl;
+            cout << "Number of Pokemon weak to Steel: " << 
+            number_of_pokemon_weak_to_steel << endl;
+            cout << "Number of Pokemon weak to Fairy: " << 
+            number_of_pokemon_weak_to_fairy << endl;
         }
 
+        //Setters
         void setPokemonInParty(Pokemon pokemoncito, int index){
             pokemons[index] = pokemoncito;
         }
-
+        
+        //Getters
         Pokemon getPokemonInParty(int index){
             return pokemons[index];
         }
