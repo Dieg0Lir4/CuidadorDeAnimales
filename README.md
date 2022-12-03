@@ -32,5 +32,5 @@ La herencia la puedes encontrar en “Pokemon.h” de la línea 131 a la linea 1
 ### (Composición o agregación)
 La composición se encuentra en “Pokemon.h” línea 14 o en la línea 27 o 37, en donde se crea un objeto de la clase “Stadistics” y si se borra el objeto pokémon también el objeto stadistics.
 
-La agregación está en “Party” en las líneas 249 a 256 en donde recibe objetos de la clase Pokemon, pero si yo borro el objeto party, no se borran los objetos pokemons, porque party solo hace referencia a estos y no los puede afectar. 
+La agregación está en “Party.h” en las líneas 249 a 256 en donde recibe objetos de la clase Pokemon, pero si yo borro el objeto party, no se borran los objetos pokemons, porque party solo hace referencia a estos y no los puede afectar. 
 
