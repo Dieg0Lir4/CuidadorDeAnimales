@@ -12,7 +12,7 @@ Pronto podrás ponerle movimientos a tus pokemons y tener más parties
 
 
 #### Correciones
-Agregue las funciones para imprimir los datos de los pokemons y para poder reajustar los datos de un pokemon por si te equivocaste
+Agregue las funciones para imprimir los datos de los pokemons y para poder reajustar los datos de un pokemon por si te equivocaste. Tambien arregle unos errores con la construccion de las clases hijas, porque siempre te daba la clase por defecto o te tenia errores si la construias con parametros.
 
 ### SUPER IMPORTANTE
 A la hora de crear a tu pokemon escribe tal cual como dice el programa que se escribe o si no no funcionara el programa.
