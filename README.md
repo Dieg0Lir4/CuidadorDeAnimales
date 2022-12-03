@@ -14,22 +14,22 @@ A la hora de crear a tu pokemon escribe tal cual como dice el programa que se es
 
 ###COMPETENCIAS
 
-####SICT0302A
+#### SICT0302A
 Se encuentran en el archivo PokemonUML.png
 
-####SICT0303A
-####(constructores, getters, setters)
+#### SICT0303A
+#### (constructores, getters, setters)
 Hay varios getters, constructores y setter
 Contructores: puedes encontrar unos ejemplos en “Pokemon.h” línea 20 a 28, línea 30 a 39 o línea 143 a 146
 Setter y Getter: Puedes encontrarlos en “Stadistics.h” de la línea 40 a 87
 
-####(Encapsulamiento)
+#### (Encapsulamiento)
 El ejemplo más claro es en “Stadistics.h” de la línea 8 a 87, todo está encapsulado ya sea en private o public.
 
-####(Herencia)
+#### (Herencia)
 La herencia la puedes encontrar en “Pokemon.h” de la línea 131 a la linea 178
 
-####(Composición o agregación)
+#### (Composición o agregación)
 La composición se encuentra en “Pokemon.h” línea 14 o en la línea 27 o 37, en donde se crea un objeto de la clase “Stadistics” y si se borra el objeto pokémon también el objeto stadistics.
 
 La agregación está en “Party” en las líneas 249 a 256 en donde recibe objetos de la clase Pokemon, pero si yo borro el objeto party, no se borran los objetos pokemons, porque party solo hace referencia a estos y no los puede afectar. 
