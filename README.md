@@ -27,7 +27,7 @@ Setter y Getter: Puedes encontrarlos en “Stadistics.h” de la línea 40 a 87
 El ejemplo más claro es en “Stadistics.h” de la línea 8 a 87, todo está encapsulado ya sea en private o public.
 
 ### (Herencia)
-La herencia la puedes encontrar en “Pokemon.h” de la línea 131 a la linea 178
+La herencia la puedes encontrar en “Pokemon.h” de la línea 131 a la linea 178, donde se crea la clase hija Captured de la clase padre Pokemon
 
 ### (Composición o agregación)
 La composición se encuentra en “Pokemon.h” línea 14 o en la línea 27 o 37, en donde se crea un objeto de la clase “Stadistics” y si se borra el objeto pokémon también el objeto stadistics.
